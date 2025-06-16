@@ -33,14 +33,13 @@ class StudentRemoteRepository implements IStudentRepository {
     }
   }
 
-  // Updated here: returning Either<Failure, void>
-  @override
+   @override
   Future<Either<Failure, void>> registerStudent(StudentEntity student) async {
     try {
       await remoteDataSource.registerStudent(student);
       return const Right(null);
     } catch (e) {
-      return Left(RemoteDatabaseFailure(message: 'Unexpected error: $e'));
+      return Left(RemoteDatabaseFailure(message: e.toString()));
     }
   }
 

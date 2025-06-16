@@ -20,7 +20,7 @@ class StudentRemoteDatasource implements IStudentDataSource {
         data: studentApiModel.toJson(),
       );
 
-      if (response.statusCode == 201) {
+      if (response.statusCode == 200) {
         return;
       } else {
         throw Exception('Failed to register student: ${response.statusMessage}');
