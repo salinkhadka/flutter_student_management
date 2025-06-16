@@ -30,6 +30,7 @@ class BatchApiModel extends Equatable {
   Map<String, dynamic> toJson() {
     return {
       '_id': batchId, // ✅ Required for MongoDB reference
+      'batchName':batchName
     };
   }
 

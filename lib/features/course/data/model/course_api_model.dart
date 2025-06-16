@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:student_management/features/course/domain/entity/course_entity.dart';
 
+
 @JsonSerializable()
 class CourseApiModel extends Equatable {
   @JsonKey(name: '_id') // Maps the server _id field
@@ -28,6 +29,7 @@ class CourseApiModel extends Equatable {
   Map<String, dynamic> toJson() {
     return {
       '_id': courseId, // ✅ Required for referencing in MongoDB
+      'courseName':courseName
     };
   }
 
